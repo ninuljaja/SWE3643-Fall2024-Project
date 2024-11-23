@@ -118,7 +118,7 @@ public class DescriptiveStatistics {
     }
     private static void validateNumberOfValues(String[] lines, int minValues) {
         if (lines.length < minValues) {
-            throw new IllegalArgumentException("Insufficient values provided. Expected at least " + minValues + " values.");
+            throw new IllegalArgumentException("Invalid input format. Expected at least " + minValues + " values, one value per line");
         }
     }
 
@@ -126,7 +126,7 @@ public class DescriptiveStatistics {
         try {
             Double.parseDouble(input.trim());
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid numeric value: " + input);
+            throw new IllegalArgumentException("Invalid numeric value");
         }
     }
 
@@ -166,7 +166,7 @@ public class DescriptiveStatistics {
     }
     private static void validateNumberOfParameters(String[] parts, int numParams) {
         if (parts.length != numParams) {
-            throw new IllegalArgumentException("Exactly " + numParams + " numeric values are required");
+            throw new IllegalArgumentException("Invalid input format. Exactly " + numParams + " numeric values are required");
         }
     }
 

@@ -119,7 +119,7 @@ class CalculatorTest {
 
         // Arrange
         String values = "9";
-        String expectedMessage = "insufficient values provided";
+        String expectedMessage = "invalid input format";
         // Act
         CalculationResult result= DescriptiveStatistics.computeSampleStandardDeviation(values);
 

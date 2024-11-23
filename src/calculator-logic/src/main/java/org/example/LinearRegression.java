@@ -49,7 +49,7 @@ public class LinearRegression {
             double b = yMean - (m * xMean); //intercept
 
 
-            String formula = "y = " + m + "x + " + b;
+            String formula = String.format("y = %.10fx + %.10f", m, b);
             return new CalculationResult(true, formula, m, "");
         }catch (IllegalArgumentException e){
             return new CalculationResult(false, e.getMessage(), 0, e.getMessage());
@@ -92,14 +92,14 @@ public class LinearRegression {
     }
     private static void validateNumberOfParameters(String[] parts, int numParams) {
         if (parts.length != numParams) {
-            throw new IllegalArgumentException("Exactly " + numParams + " numeric values are required");
+            throw new IllegalArgumentException("Invalid input format. Exactly " + numParams + " numeric values are required on one line separated by commas");
         }
     }
 
 
     private static void validateNumberOfXYpairs(ArrayList<Double> xValues, ArrayList<Double> yValues) throws IllegalArgumentException {
         if (xValues.size() < 2) {
-            throw new IllegalArgumentException("At least two X,Y pairs are required");
+            throw new IllegalArgumentException("At least two X,Y pairs are required. Input format is two or more X,Y comma-separated number pairs, one X,Y pair per line");
         }
     }
     private static void validateDivision(double slope) throws IllegalArgumentException {
