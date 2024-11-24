@@ -1,0 +1,32 @@
+name: Run Tests
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+              ${{ runner.os }}-maven-
+
+      - name: Install dependencies
+        run: |
+          mvn clean install
+      - name: Install Playwright dependencies
+        run: |
+          npx playwright install
+      - name: Run tests
+        run: mvn test
+
