@@ -33,7 +33,16 @@ jobs:
 
       - name: Start Web Application with Maven
         run: |
-          mvn -pl src/web spring-boot:run
+          mvn -pl src/web spring-boot:run > /dev/null 2>&1 &  # Start Spring Boot app in the background
+          echo "Waiting for the web application to start..."
+          for i in {1..30}; do
+           if curl -s http://localhost:8080/ > /dev/null; then
+             echo "Application is up!"
+             break
+           fi
+           echo "Waiting for application to start... Attempt $i"
+           sleep 5
+          done
 
       - name: Run tests
         run: mvn test
