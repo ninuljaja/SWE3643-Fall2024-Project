@@ -84,23 +84,28 @@ This combination of unit and end-to-end testing ensures both the correctness of 
 
 ## Environment
 To set up and run the project, the following environment is required:
-Java 21 is required 
+## Prerequisites
+- **Java 21** is required.
+- **Maven** is required.
+- **Node.js** is required.
 
 **Check Java Installation** 
 
-Open a terminal (Command Prompt, PowerShell, or a Linux/Mac terminal) and type: 
+1. Open a terminal (Command Prompt, PowerShell, or a Linux/Mac terminal) and type: 
 
-java -version 
+   ```bash
+   java -version
+
 <img src="terminalJava.png" style="zoom: 50%;" />
 
 If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
 
 **Verify JDK Installation** 
 
-To confirm the JDK is correctly installed, type: 
-
-javac -version 
-
+2. To confirm the JDK is correctly installed, type: 
+  
+   javac -version 
+    ```bash
 **Expected Output:** 
 ![alt text](javac_cmd.png)
 
@@ -198,14 +203,6 @@ npm -v
 
  
 
-**Clone the Repository** 
-
-In command line navigate to the folder where you want to clone repository and run the command: 
-
-git clone https://github.com/ninuljaja/SWE3643-QA-Project.git 
-
- 
-
 **Install Dependencies** 
 
 Navigate to the root directory of the repository : 
@@ -217,8 +214,7 @@ cd SWE3643-QA-Project
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ninuljaja/SWE3643-QA-Project.git
-  
-   ---
+
 
 **Install Dependencies** 
 
