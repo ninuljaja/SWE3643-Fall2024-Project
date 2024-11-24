@@ -34,11 +34,7 @@ jobs:
       - name: Start Web Application with Maven
         run: |
           mvn -pl src/web spring-boot:run
-
-          while ! curl -s http://localhost:8080/ > /dev/null; do
-            echo "Waiting for application to start..."
-            sleep 5
-          done
+          curl --retry 30 --retry-delay 5 --max-time 60 --silent http://localhost:8080/
 
 
       - name: Run tests
