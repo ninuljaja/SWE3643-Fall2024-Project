@@ -19,7 +19,6 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 ## Architecture
 The web-based calculator application is built using the following architecture:
 <img src="umlDiagram.png" alt="image-20240204220021325" style="zoom: 50%;" />
-![Alt text](umlDiagram.png)
 
 
 - **Testing Frameworks:** [Unit testing and E2E tools]
@@ -27,8 +26,18 @@ The web-based calculator application is built using the following architecture:
 
 ## Environment
 To set up and run the project, the following environment is required:
+Java 21 is required 
+
+Check Java Installation 
+
+Open a terminal (Command Prompt, PowerShell, or a Linux/Mac terminal) and type: 
+
+java -version 
+<img src="image.png" style="zoom: 50%;" />
+
 
 ## Executing the Web Application
+
 To execute the web application locally:
 1. Clone the repository:  
    ```bash
