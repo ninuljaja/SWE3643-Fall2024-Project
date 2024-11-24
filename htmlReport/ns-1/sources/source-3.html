@@ -1,0 +1,291 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DescriptiveStatistics</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: DescriptiveStatistics (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DescriptiveStatistics</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.1%
+  </span>
+  <span class="absValue">
+    (16/17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (40/40)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.8%
+  </span>
+  <span class="absValue">
+    (83/84)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Arrays;
+&nbsp;
+<b class="nc">&nbsp;public class DescriptiveStatistics {</b>
+&nbsp;
+&nbsp;
+&nbsp;    static CalculationResult computeMean(String input) throws IllegalArgumentException {
+&nbsp;        //preq-LOGIC-5
+&nbsp;
+&nbsp;        try {
+<b class="fc">&nbsp;            validateInput(input);  // Check if input is empty</b>
+<b class="fc">&nbsp;            double[] values = parseValues(input, 1); // At least one value</b>
+<b class="fc">&nbsp;            double mean = computeMeanHelper(values);</b>
+<b class="fc">&nbsp;            return new CalculationResult(true, &quot;Mean&quot;, mean, &quot;&quot;);</b>
+<b class="fc">&nbsp;        } catch (IllegalArgumentException e) {</b>
+<b class="fc">&nbsp;            return new CalculationResult(false, e.getMessage(), 0, e.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    static CalculationResult computeSampleStandardDeviation(String input) throws IllegalArgumentException {
+&nbsp;        //preq-LOGIC-3
+&nbsp;        try {
+<b class="fc">&nbsp;            validateInput(input); // check if input is empty</b>
+<b class="fc">&nbsp;            double[] values = parseValues(input, 2); // at least two values</b>
+<b class="fc">&nbsp;            double stdDev =  computeStandardDeviation(values, false);</b>
+<b class="fc">&nbsp;            return new CalculationResult(true, &quot;Sample Standard Deviation&quot;, stdDev, &quot;&quot;);</b>
+<b class="fc">&nbsp;        } catch (IllegalArgumentException e) {</b>
+<b class="fc">&nbsp;            return new CalculationResult(false, e.getMessage(), 0, e.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    static CalculationResult computePopulationStandardDeviation(String input) throws IllegalArgumentException {
+&nbsp;        //preq-LOGIC-4
+&nbsp;        try{
+<b class="fc">&nbsp;            validateInput(input);</b>
+<b class="fc">&nbsp;            double[] values = parseValues(input, 1);</b>
+<b class="fc">&nbsp;            double stdDev =  computeStandardDeviation(values, true);</b>
+<b class="fc">&nbsp;            return new CalculationResult(true, &quot;Population Standard Deviation&quot;, stdDev, &quot;&quot;);</b>
+<b class="fc">&nbsp;        } catch (IllegalArgumentException e) {</b>
+<b class="fc">&nbsp;            return new CalculationResult(false, e.getMessage(), 0, e.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    static CalculationResult computeZscore(String input) throws IllegalArgumentException {
+&nbsp;        //preq-LOGIC-6
+&nbsp;        try {
+<b class="fc">&nbsp;            validateInput(input);</b>
+<b class="fc">&nbsp;            double[] parameters = parseParameters(input, 3); // three parameters</b>
+<b class="fc">&nbsp;            double value = parameters[0];</b>
+<b class="fc">&nbsp;            double mean = parameters[1];</b>
+<b class="fc">&nbsp;            double stdDev = parameters[2];</b>
+<b class="fc">&nbsp;            double numerator = value - mean;</b>
+<b class="fc">&nbsp;            double zScore = numerator / stdDev;</b>
+<b class="fc">&nbsp;            validateDivision(zScore);</b>
+&nbsp;
+<b class="fc">&nbsp;            return new CalculationResult(true, &quot;Z-Score&quot;, zScore, &quot;&quot;);</b>
+<b class="fc">&nbsp;        }catch (IllegalArgumentException e) {</b>
+<b class="fc">&nbsp;            return new CalculationResult(false, e.getMessage(), 0, e.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    // Helper methods
+&nbsp;    static double computeMeanHelper(double[] values) throws IllegalArgumentException {
+&nbsp;
+<b class="fc">&nbsp;        if (values == null || values.length == 0) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Input cannot be null or empty&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        double sumAccumulator = 0;</b>
+<b class="fc">&nbsp;        for (double value : values) {</b>
+<b class="fc">&nbsp;            sumAccumulator += value;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return sumAccumulator / values.length;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    static double computeSquareOfDifferences(double[] values, double mean) throws IllegalArgumentException {
+<b class="fc">&nbsp;        if (values == null || values.length == 0) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Input cannot be null or empty&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        double squareAccumulator = 0;</b>
+<b class="fc">&nbsp;        for (double value : values) {</b>
+<b class="fc">&nbsp;            double difference = value - mean;</b>
+<b class="fc">&nbsp;            double squareOfDifference = difference * difference;</b>
+<b class="fc">&nbsp;            squareAccumulator += squareOfDifference;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return squareAccumulator;</b>
+&nbsp;    }
+&nbsp;    static double computeVariance(double squareOfDifferences, int numValues, boolean isPopulation) throws IllegalArgumentException {
+<b class="fc">&nbsp;        if(!isPopulation) {</b>
+<b class="fc">&nbsp;            numValues--;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(numValues &lt; 1) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Insufficient values provided&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return squareOfDifferences / numValues;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    static double computeStandardDeviation(double[] values, boolean isPopulation) throws IllegalArgumentException {
+<b class="fc">&nbsp;        if (values == null || values.length == 0){</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;input cannot be null or empty&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        double mean = computeMeanHelper(values);</b>
+<b class="fc">&nbsp;        double squareOfDifferences = computeSquareOfDifferences(values, mean);</b>
+<b class="fc">&nbsp;        double variance = computeVariance(squareOfDifferences, values.length, isPopulation);</b>
+<b class="fc">&nbsp;        return Math.sqrt(variance);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Validation methods
+&nbsp;    static void validateInput(String input) {
+<b class="fc">&nbsp;        if (input == null || input.trim().isEmpty()) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Input cannot be null or empty.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    private static void validateNumberOfValues(String[] lines, int minValues) {
+<b class="fc">&nbsp;        if (lines.length &lt; minValues) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid input format. Expected at least &quot; + minValues + &quot; values, one value per line&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    static void validateNumericInput(String input) {
+&nbsp;        try {
+<b class="fc">&nbsp;            Double.parseDouble(input.trim());</b>
+<b class="fc">&nbsp;        } catch (NumberFormatException e) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid numeric value&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static void validateDivision(double result){
+<b class="fc">&nbsp;        if (Double.isInfinite(result) || Double.isNaN(result)) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Division by zero&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    static double[] parseValues(String input, int minValue) {
+&nbsp;
+<b class="fc">&nbsp;        String[] lines = input.split(&quot;\n&quot;);</b>
+<b class="fc">&nbsp;        validateNumberOfValues(lines, minValue);</b>
+<b class="fc">&nbsp;        ArrayList&lt;Double&gt; values = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        for (String line : lines) {</b>
+<b class="fc">&nbsp;            String trimmed = line.trim();</b>
+<b class="fc">&nbsp;            if (!trimmed.isEmpty()) {</b>
+<b class="fc">&nbsp;                validateNumericInput(trimmed); // Validate numeric values</b>
+<b class="fc">&nbsp;                values.add(Double.parseDouble(trimmed));</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return values.stream().mapToDouble(Double::doubleValue).toArray();</b>
+&nbsp;    }
+&nbsp;    static double[] parseParameters(String input, int numParams) {
+<b class="fc">&nbsp;        String[] lines = input.split(&quot;\n&quot;);</b>
+<b class="fc">&nbsp;        validateNumberOfLines(lines);</b>
+<b class="fc">&nbsp;        String[] parts = lines[0].split(&quot;,&quot;);</b>
+<b class="fc">&nbsp;        validateNumberOfParameters(parts, numParams);</b>
+<b class="fc">&nbsp;        for (String part : parts) {</b>
+<b class="fc">&nbsp;            validateNumericInput(part.trim());  // Validate each parameter</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return Arrays.stream(parts).map(String::trim).mapToDouble(Double::parseDouble).toArray();</b>
+&nbsp;    }
+&nbsp;    private static void validateNumberOfLines(String[] lines) {
+<b class="fc">&nbsp;        if (lines.length != 1) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Exactly one line of input is required&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    private static void validateNumberOfParameters(String[] parts, int numParams) {
+<b class="fc">&nbsp;        if (parts.length != numParams) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid input format. Exactly &quot; + numParams + &quot; numeric values are required&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-23 23:35</div>
+</div>
+</body>
+</html>

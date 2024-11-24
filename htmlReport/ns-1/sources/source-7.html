@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > WebController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: WebController (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WebController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;
+&nbsp;import org.springframework.stereotype.Controller;
+&nbsp;import org.springframework.ui.Model;
+&nbsp;import org.springframework.web.bind.annotation.GetMapping;
+&nbsp;import org.springframework.web.bind.annotation.RequestParam;
+&nbsp;import org.springframework.web.bind.annotation.ResponseBody;
+&nbsp;
+&nbsp;
+&nbsp;@Controller
+<b class="nc">&nbsp;public class WebController {</b>
+&nbsp;
+&nbsp;    @GetMapping(&quot;/&quot;)
+&nbsp;    public String home(Model model) {
+<b class="nc">&nbsp;        model.addAttribute(&quot;calculationResult&quot;, new CalculationResult(true, &quot;Enter values below, then select an operation&quot;, 0.0, &quot;&quot;));</b>
+<b class="nc">&nbsp;        return &quot;index&quot;; // Serve the index page</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @GetMapping(&quot;/mean&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult  computeMean(@RequestParam String values) {
+<b class="nc">&nbsp;        CalculationResult result = DescriptiveStatistics.computeMean(values);</b>
+&nbsp;
+<b class="nc">&nbsp;        return result; // return the same index.html, result will be updated</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @GetMapping(&quot;/sample-std-dev&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult computeSampleStandardDeviation(@RequestParam String values, Model model) {
+<b class="nc">&nbsp;        CalculationResult result = DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @GetMapping(&quot;/population-std-dev&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult computePopulationStandardDeviation(@RequestParam String values, Model model) {
+<b class="nc">&nbsp;        CalculationResult result = DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/z-score&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult computeZscore(@RequestParam String values, Model model) {
+<b class="nc">&nbsp;        CalculationResult result = DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/linear-regression&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult computeLinearRegression(@RequestParam String values, Model model) {
+<b class="nc">&nbsp;        CalculationResult result = LinearRegression.computeLinearRegressionFormula(values);</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/predict-y&quot;)
+&nbsp;    @ResponseBody
+&nbsp;    public CalculationResult computePredictedY(@RequestParam String values, Model model) {
+<b class="nc">&nbsp;        CalculationResult result = LinearRegression.computePredictedY(values);</b>
+&nbsp;
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-23 23:35</div>
+</div>
+</body>
+</html>

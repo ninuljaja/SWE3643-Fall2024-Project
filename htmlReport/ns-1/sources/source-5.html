@@ -1,0 +1,965 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LogicUnitTests</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: LogicUnitTests (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LogicUnitTests</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (54/54)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (254/254)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;import org.junit.jupiter.api.DisplayName;
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;
+&nbsp;import static org.junit.jupiter.api.Assertions.*;
+&nbsp;import static org.junit.jupiter.api.Assertions.assertEquals;
+&nbsp;
+<b class="fc">&nbsp;class LogicUnitTests {</b>
+&nbsp;
+&nbsp;   // Test DescriptiveStatistics functions
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMean receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeMean_ReceiveNullValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-4
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+<b class="fc">&nbsp;        String values = null;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeMean(values);</b>
+&nbsp;
+&nbsp;        // Assert
+&nbsp;
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMean receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeMean_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-4
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+<b class="fc">&nbsp;        String values = &quot;&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeMean(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMean receives non-numeric value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeMean_ReceiveNonNumericValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-4
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String expectedMessage = &quot;invalid numeric value&quot;;</b>
+<b class="fc">&nbsp;        String values = &quot;1\n123,123\n3&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeMean(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMean receives valid values - return mean&quot;)
+&nbsp;    void Calculator_computeMean_ReceiveValidValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-4
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9\n&quot; +</b>
+&nbsp;                &quot;6\n&quot; +
+&nbsp;                &quot;8\n&quot; +
+&nbsp;                &quot;5\n&quot; +
+&nbsp;                &quot;7\n&quot;;
+<b class="fc">&nbsp;        double expectedResult = 7;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computeMean(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSampleStandardDeviation receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeSampleStandardDeviation_ReceiveNullValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSampleStandardDeviation receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeSampleStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSampleStandardDeviation receives one value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeSampleStandardDeviation_ReceiveOneValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;invalid input format&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+&nbsp;
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSampleStandardDeviation receives valid values - returns std dev&quot;)
+&nbsp;    void Calculator_computeSampleStandardDeviation_ReceiveValidValues_ReturnsStdDev() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9\n6\n8\n5\n7&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 1.5811388300841898;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSampleStandardDeviation receives all zeros values - returns std dev = 0&quot;)
+&nbsp;    void Calculator_computeSampleStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;0\n0\n0\n0\n0&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 0;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computeSampleStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePopulationStandardDeviation receives one value - std dev should be 0&quot;)
+&nbsp;    void Calculator_computePopulationStandardDeviation_ReceiveOneValue_StdDevShouldBe0() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 0;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePopulationStandardDeviation receives valid values - returns std dev&quot;)
+&nbsp;    void Calculator_computePopulationStandardDeviation_ReceiveValidValues_ReturnStdDev() {
+&nbsp;        ////preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9\n&quot; +</b>
+&nbsp;                &quot;6\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;8\n&quot; +
+&nbsp;                &quot;5\n&quot; +
+&nbsp;                &quot;7&quot;;
+<b class="fc">&nbsp;        double expectedResult = 1.4142135623731;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePopulationStandardDeviation receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computePopulationStandardDeviation_ReceiveNullValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePopulationStandardDeviation receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computePopulationStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePopulationStandardDeviation receives all zeros values - returns std dev = 0&quot;)
+&nbsp;    void Calculator_computePopulationStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
+&nbsp;        //preq-UNIT-TEST-2
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;0\n0\n0\n0\n0&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 0;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult  result = DescriptiveStatistics.computePopulationStandardDeviation(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives Null Value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesNullValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives Empty Value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesEmptyValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives one value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesOneValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly 3 numeric values are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives two values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesTwoValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 8&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly 3 numeric values are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives four values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesFourValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 8, 7, 6&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly 3 numeric values are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives more than one line of values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesMoreThanOneLineOfValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9\n, 8, 7&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly one line of input is required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives three values, standard deviation value is zero - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesValuesStdDevIsZero_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 8, 0&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;division by zero&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives standard deviation = zero, mean = value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesStdDevIsZeroMeanEqualsValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 9, 0&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;division by zero&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives mean = 0 - Returns Z-score = value/stdDev&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesMeanIsZero_ReturnZscore () {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;5, 0, 6&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 5.0/6.0;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000000001);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeZscore receives valid values - returns Z-score&quot;)
+&nbsp;    void Calculator_computeZscore_ReceivesValidValues_ReturnsZscore() {
+&nbsp;        //preq-UNIT-TEST-5
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;11.5,7,1.5811388300841898&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 2.846049894151541;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result = DescriptiveStatistics.computeZscore(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000000001);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Testing DescriptiveStatistic Helper methods
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMeanHelper receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeMeanHelper_ReceiveNullValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+<b class="fc">&nbsp;        double[] values = null;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeMeanHelper(values);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;        // Assert
+&nbsp;
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeMeanHelper receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeMeanHelper_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+<b class="fc">&nbsp;        double[] values = {};</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeMeanHelper(values);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeStandardDeviation receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeStandardDeviation_ReceiveNullValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        double[] values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeStandardDeviation(values, false);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeStandardDeviation receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        double[] values = {};</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeStandardDeviation(values, false);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeSquareOfDifferences receives Null Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeSquareOfDifferences_ReceiveNullValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        double[] values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeSquareOfDifferences(values, 0);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;ComputeSquareOfDifferences receives Empty Value List - Throw Exception&quot;)
+&nbsp;    void Calculator_computeSquareOfDifferences_ReceiveEmptyValueList_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        double[] values = {};</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeSquareOfDifferences(values, 0);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeVariance receives NumValues = 1, isPopulation = false - Throw Exception&quot;)
+&nbsp;    void Calculator_computeVariance_ReceiveNumValuesOneIsPopulationFalse_ThrowException() {
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        double squareOfDifferences = 0;</b>
+<b class="fc">&nbsp;        int numValues = 1;</b>
+<b class="fc">&nbsp;        boolean isPopulation = false;</b>
+&nbsp;
+<b class="fc">&nbsp;        String expectedMessage = &quot;insufficient values provided&quot;;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        Exception exception = assertThrows(IllegalArgumentException.class, () -&gt; {</b>
+<b class="fc">&nbsp;            DescriptiveStatistics.computeVariance(squareOfDifferences, numValues, isPopulation);</b>
+&nbsp;        });
+<b class="fc">&nbsp;        String actualMessage = exception.getMessage().toLowerCase();</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(actualMessage.contains(expectedMessage));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Testing LinearRegression methods
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives valid values - returns liner regression formula in the form y = mx + b&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21\n&quot; +</b>
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.5,53.12\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.52,54.48\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.55,55.84\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.57,57.2\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.6,58.57\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.63,59.93\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.65,61.29\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.68,63.11\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.7,64.47\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.73,66.28\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.75,68.1\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.78,69.92\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.8,72.19\n&quot; +
+&nbsp;                &quot;\n&quot; +
+&nbsp;                &quot;1.83,74.46,\n&quot;;
+<b class="fc">&nbsp;        String expectedResult = &quot;y = 61.272186542107434x + -39.061955918838656&quot;;</b>
+<b class="fc">&nbsp;        double expectedM = 61.272186542107434;</b>
+<b class="fc">&nbsp;        double expectedB = -39.061955918838656;</b>
+<b class="fc">&nbsp;        double tolerance = 1e-10;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result = LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;        // Extract m and b from the result
+<b class="fc">&nbsp;        String[] parts = result.getDescription().replace(&quot;y =&quot;, &quot;&quot;).replace(&quot;+&quot;,&quot;&quot;).replaceAll(&quot;\\s+&quot;, &quot;&quot;).split(&quot;x&quot;);</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        double actualM = Double.parseDouble(parts[0].trim());</b>
+<b class="fc">&nbsp;        double actualB = Double.parseDouble(parts[1].trim());</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedM, actualM, tolerance);</b>
+<b class="fc">&nbsp;        assertEquals(expectedB, actualB, tolerance);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives one pair of values - - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveOnePairOfValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;at least two x,y pairs are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives empty values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveEmptyValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives Null values - - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveNullValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = null;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;input cannot be null or empty&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives non-numeric values - - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveNonNumValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;f,&quot; +</b>
+&nbsp;                &quot;f,f&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;line should contain exactly two valid numeric values&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives the same X values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveSameXValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21\n&quot; +</b>
+&nbsp;                &quot;1.47,53.12\n&quot; +
+&nbsp;                &quot;1.47,54.48\n&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;division by zero&quot;;</b>
+&nbsp;        // Act
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives the same X values - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveAllXYValuesZero_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;0,0\n&quot; +</b>
+&nbsp;                &quot;0,0\n&quot; +
+&nbsp;                &quot;0,0\n&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;division by zero&quot;;</b>
+&nbsp;        // Act
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives receives the same Y values - returns liner regression formula y = 0x + y&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveSameYValues_ReturnsLinearRegressionFormula() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21\n&quot; +</b>
+&nbsp;                &quot;1.5,52.21\n&quot; +
+&nbsp;                &quot;1.52,52.21\n&quot; +
+&nbsp;                &quot;1.55,52.21\n&quot; +
+&nbsp;                &quot;1.57,52.21\n&quot; +
+&nbsp;                &quot;1.6,52.21\n&quot; +
+&nbsp;                &quot;1.63,52.21\n&quot;;
+<b class="fc">&nbsp;        String expectedResult = &quot;y = 0x + 52.21&quot;;</b>
+<b class="fc">&nbsp;        double expectedM = 0;</b>
+<b class="fc">&nbsp;        double expectedB = 52.21;</b>
+<b class="fc">&nbsp;        double tolerance = 1e-10;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result = LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;        // Extract m and b from the result
+<b class="fc">&nbsp;        String[] parts = result.getDescription().replace(&quot;y =&quot;, &quot;&quot;).replace(&quot;+&quot;,&quot;&quot;).replaceAll(&quot;\\s+&quot;, &quot;&quot;).split(&quot;x&quot;);</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        double actualM = Double.parseDouble(parts[0].trim());</b>
+<b class="fc">&nbsp;        double actualB = Double.parseDouble(parts[1].trim());</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedM, actualM, tolerance);</b>
+<b class="fc">&nbsp;        assertEquals(expectedB, actualB, tolerance);</b>
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives three values in line - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveThreeValuesInLine_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21\n&quot; +</b>
+&nbsp;                &quot;1.47,53,12\n&quot; +
+&nbsp;                &quot;1.47,54.48\n&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;line should contain exactly two valid numeric values&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computeLinearRegressionFormula receives non-numeric value - Throw Exception&quot;)
+&nbsp;    void Calculator_computeLinearRegressionFormula_ReceiveNonNumericValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-6
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.47,52.21\n&quot; +</b>
+&nbsp;                &quot;1.47,a\n&quot; +
+&nbsp;                &quot;1.47,54.48\n&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;invalid numeric value&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computeLinearRegressionFormula(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePredictedY receives non-numeric value - Throw Exception&quot;)
+&nbsp;    void Calculator_computePredictedY_ReceiveNonNumericValue_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-7
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, a, 5&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;invalid numeric value&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computePredictedY(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePredictedY receives two lines of values - Throw Exception&quot;)
+&nbsp;    void Calculator_computePredictedY_ReceiveTwoLinesOfValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-7
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 4, 5\n&quot;+</b>
+&nbsp;                &quot;5, 6, 2&quot;;
+<b class="fc">&nbsp;        String expectedMessage = &quot;predict y format is \&quot;x,m,b\&quot; on one line separated by commas&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computePredictedY(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePredictedY receives two values - Throw Exception&quot;)
+&nbsp;    void Calculator_computePredictedY_ReceivesTwoValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-7
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 8&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly 3 numeric values are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computePredictedY(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePredictedY receives four values - Throw Exception&quot;)
+&nbsp;    void Calculator_computePredictedY_ReceivesFourValues_ThrowException() {
+&nbsp;        //preq-UNIT-TEST-7
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;9, 8, 7, 6&quot;;</b>
+<b class="fc">&nbsp;        String expectedMessage = &quot;exactly 3 numeric values are required&quot;;</b>
+&nbsp;
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result= LinearRegression.computePredictedY(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertFalse(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertTrue(result.getError().toLowerCase().contains(expectedMessage));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;computePredictedY receives valid values - returns predicted Y values&quot;)
+&nbsp;    void Calculator_computePredictedY_ReceiveValidValues_ReturnsPredictedY() {
+&nbsp;        //preq-UNIT-TEST-7
+&nbsp;
+&nbsp;        // Arrange
+<b class="fc">&nbsp;        String values = &quot;1.535, 61.272186542107434, -39.061955918838656&quot;;</b>
+<b class="fc">&nbsp;        double expectedResult = 54.990850423296244;</b>
+&nbsp;        // Act
+<b class="fc">&nbsp;        CalculationResult result = LinearRegression.computePredictedY(values);</b>
+&nbsp;
+&nbsp;        // Assert
+<b class="fc">&nbsp;        assertTrue(result.getIsSuccess());</b>
+<b class="fc">&nbsp;        assertEquals(expectedResult, result.getResult(), 0.00000000001);</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-23 23:35</div>
+</div>
+</body>
+</html>
