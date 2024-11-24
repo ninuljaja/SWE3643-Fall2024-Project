@@ -86,7 +86,7 @@ This combination of unit and end-to-end testing ensures both the correctness of 
 To set up and run the project, the following environment is required:
 Java 21 is required 
 
-Check Java Installation 
+**Check Java Installation** 
 
 Open a terminal (Command Prompt, PowerShell, or a Linux/Mac terminal) and type: 
 
@@ -95,41 +95,41 @@ java -version
 
 If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
 
-Verify JDK Installation 
+**Verify JDK Installation** 
 
 To confirm the JDK is correctly installed, type: 
 
 javac -version 
 
-Expected Output: 
+**Expected Output:** 
 ![alt text](javac_cmd.png)
 
-Check JAVA_HOME Environment Variable 
+**Check JAVA_HOME Environment Variable** 
 
-On Windows: 
+   On Windows: 
 
-echo %JAVA_HOME% 
+   echo %JAVA_HOME% 
 
-Expected Output: 
+   Expected Output: 
 
-C:\Program Files\Java\jdk-21 
+   C:\Program Files\Java\jdk-21 
 
-On Linux/Mac: 
+   On Linux/Mac: 
 
-echo $JAVA_HOME 
+   echo $JAVA_HOME 
 
-Expected Output: 
+   Expected Output: 
 
-/usr/lib/jvm/java-21-openjdk-amd64 
+   /usr/lib/jvm/java-21-openjdk-amd64 
 
-Verify PATH Configuration 
+   Verify PATH Configuration 
 
-Ensure the bin directory of JDK 21 is in your system PATH: 
+   Ensure the bin directory of JDK 21 is in your system PATH: 
 
-On Windows: 
-echo %JAVA_HOME% 
+   On Windows: 
+   echo %JAVA_HOME% 
 
-Look for: 
+**Look for:**
 
 C:\Program Files\Java\jdk-21\bin 
 
@@ -145,7 +145,7 @@ Look for:
 
 Shape 
 
-Install Prerequisites 
+**Install Prerequisites** 
 
 If Java 21 is not installed: 
 
@@ -159,34 +159,34 @@ For Maven and Node.js:
 Install Maven from [Maven Downloads](https://maven.apache.org/download.cgi).
 
 
-Verify that Maven is installed 
+**Verify that Maven is installed** 
 
 mvn -version 
 
 Look for the Java version listed. Verify that Java 21 is used. If this shows Java 17 or an earlier version, Maven is not using the correct JDK. 
 
-Set the Correct JDK for Maven 
+**Set the Correct JDK for Maven** 
 
 Maven uses the JDK specified in your JAVA_HOME environment variable. 
 
-Set JAVA_HOME to the path of JDK 21: 
+Set **JAVA_HOME** to the path of JDK 21: 
 
-set JAVA_HOME=C:\Program Files\Java\jdk-21 
+set **JAVA_HOME**=C:\Program Files\Java\jdk-21 
 
 ![alt text](image.png)
 
 set PATH=%JAVA_HOME%\bin;%PATH% 
 
-Verify Maven now uses JDK 21: 
+**Verify Maven now uses JDK 21:** 
 
 mvn -v 
 
 ![alt text](image-1.png)
 
-Install Node.js from the [official site](https://nodejs.org/).
+**Install Node.js from the [official site](https://nodejs.org/).**
 
 
-Verify that Node is installed 
+**Verify that Node is installed** 
 
 node -v 
 
@@ -198,7 +198,7 @@ npm -v
 
  
 
-Clone the Repository 
+**Clone the Repository** 
 
 In command line navigate to the folder where you want to clone repository and run the command: 
 
@@ -206,37 +206,37 @@ git clone https://github.com/ninuljaja/SWE3643-QA-Project.git
 
  
 
-Install Dependencies 
+**Install Dependencies** 
 
 Navigate to the root directory of the repository : 
 
 cd SWE3643-QA-Project 
 ## Executing the Web Application
 
-To execute the web application locally:
+**To execute the web application locally:**
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ninuljaja/SWE3643-QA-Project.git
   
    ---
 
-Install Dependencies 
+**Install Dependencies** 
 
 Navigate to the root directory of the repository : 
 
 cd SWE3643-QA-Project 
 
-Install Maven dependencies without running tests: 
+**Install Maven dependencies without running tests:** 
 
 mvn clean install -DskipTests 
 ![alt text](image-2.png)
 
-Set up Playwright for end-to-end tests: 
+**Set up Playwright for end-to-end tests:** 
 
 npx playwright install 
-![alt text](image-3.png)
 
-Running the Application 
+
+**Running the Application** 
 
 To run the application locally: 
 
@@ -244,7 +244,7 @@ Navigate to the web module directory:
 
 cd src/web 
 
-Start the application: 
+**Start the application:** 
 
 mvn spring-boot:run 
 ![alt text](image-4.png)
