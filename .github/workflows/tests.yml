@@ -24,15 +24,20 @@ jobs:
       - name: Install dependencies
         run: |
           mvn clean install
+
       - name: Install Playwright dependencies
         run: |
           npx playwright install
 
       - name: Start Web Application with Maven
         run: |
-          nohup mvn spring-boot:run &
-          sleep 10
-          
+          mvn -pl src/web spring-boot:run
+
+          while ! curl -s http://localhost:8080/ > /dev/null; do
+            echo "Waiting for application to start..."
+            sleep 5
+          done
+
       - name: Run tests
         run: mvn test
 
