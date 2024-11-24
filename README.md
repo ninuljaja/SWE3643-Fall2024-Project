@@ -102,7 +102,7 @@ To confirm the JDK is correctly installed, type:
 javac -version 
 
 Expected Output: 
-<img src ="C:\Users\lanvu\Downloads\javac_cmd.png>
+![alt text](javac_cmd.png)
 
 Check JAVA_HOME Environment Variable 
 
@@ -110,9 +110,154 @@ On Windows:
 
 echo %JAVA_HOME% 
 
+Expected Output: 
+
+C:\Program Files\Java\jdk-21 
+
+On Linux/Mac: 
+
+echo $JAVA_HOME 
+
+Expected Output: 
+
+/usr/lib/jvm/java-21-openjdk-amd64 
+
+Verify PATH Configuration 
+
+Ensure the bin directory of JDK 21 is in your system PATH: 
+
+On Windows: 
+echo %JAVA_HOME% 
+
+Look for: 
+
+C:\Program Files\Java\jdk-21\bin 
+
+![alt text](echoPath_output.png)
+
+On Linux/Mac: 
+
+echo $PATH 
+
+Look for: 
+
+/usr/lib/jvm/java-21-openjdk-amd64/bin 
+
+Shape 
+
+Install Prerequisites 
+
+If Java 21 is not installed: 
+
+Download and install JDK 21 from the [official site](https://www.oracle.com/java/technologies/javase-downloads.html).
+
+
+Set the JAVA_HOME environment variable and add the bin directory to your system's PATH. 
+
+For Maven and Node.js: 
+
+Install Maven from [Maven Downloads](https://maven.apache.org/download.cgi).
+
+
+Verify that Maven is installed 
+
+mvn -version 
+
+Look for the Java version listed. Verify that Java 21 is used. If this shows Java 17 or an earlier version, Maven is not using the correct JDK. 
+
+Set the Correct JDK for Maven 
+
+Maven uses the JDK specified in your JAVA_HOME environment variable. 
+
+Set JAVA_HOME to the path of JDK 21: 
+
+set JAVA_HOME=C:\Program Files\Java\jdk-21 
+
+![alt text](image.png)
+
+set PATH=%JAVA_HOME%\bin;%PATH% 
+
+Verify Maven now uses JDK 21: 
+
+mvn -v 
+
+![alt text](image-1.png)
+
+Install Node.js from the [official site](https://nodejs.org/).
+
+
+Verify that Node is installed 
+
+node -v 
+
+npm -v 
+
+ 
+
+ ---
+
+ 
+
+Clone the Repository 
+
+In command line navigate to the folder where you want to clone repository and run the command: 
+
+git clone https://github.com/ninuljaja/SWE3643-QA-Project.git 
+
+ 
+
+Install Dependencies 
+
+Navigate to the root directory of the repository : 
+
+cd SWE3643-QA-Project 
 ## Executing the Web Application
 
 To execute the web application locally:
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ninuljaja/SWE3643-QA-Project.git
+  
+   ---
+
+Install Dependencies 
+
+Navigate to the root directory of the repository : 
+
+cd SWE3643-QA-Project 
+
+Install Maven dependencies without running tests: 
+
+mvn clean install -DskipTests 
+![alt text](image-2.png)
+
+Set up Playwright for end-to-end tests: 
+
+npx playwright install 
+![alt text](image-3.png)
+
+Running the Application 
+
+To run the application locally: 
+
+Navigate to the web module directory: 
+
+cd src/web 
+
+Start the application: 
+
+mvn spring-boot:run 
+![alt text](image-4.png)
+![alt text](image-5.png)
+
+Once started, open a browser and connect to: 
+
+http://localhost:8080 
+
+![alt text](image-6.png)
+
+Running Tests 
+
+To execute tests run: 
+
+mvn test 

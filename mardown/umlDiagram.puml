@@ -1,0 +1,65 @@
+@startuml
+allowmixing
+
+package "Calculator Logic Module" #lightblue {
+    class DescriptiveStatistics {
+        + ValidationFunctions
+        + LogicFunctions
+    }
+
+    class LinearRegression {
+        + ValidationFunctions
+        + LogicFunctions
+    }
+
+    DescriptiveStatistics ..> CalculationResult : uses
+    LinearRegression ..> CalculationResult : uses
+}
+
+package "Calculator Logic Unit Tests via JUnit" #lightyellow {
+    class LogicUnitTests {
+        + DescriptiveStatistics_NullValueList_ThrowsException()
+        + DescriptiveStatistics_ValidValues_ReturnsMean()
+        + LinearRegression_EmptyInput_ReturnsError()
+        + LinearRegression_ValidPairs_ReturnsFormula()
+    }
+
+    LogicUnitTests --> DescriptiveStatistics
+    LogicUnitTests --> LinearRegression
+}
+
+package "Calculator Web Server App" #lightblue {
+    class Models
+    class Views
+    class Controllers {
+        + computeMean(values: String): CalculationResult
+        + computeSampleStandardDeviation(values: String): CalculationResult
+        + computePopulationStandardDeviation(values: String): CalculationResult
+        + computeZscore(values: String): CalculationResult
+        + computeLinearRegression(values: String): CalculationResult
+        + computePredictedY(values: String): CalculationResult
+    }
+
+    Controllers --> Views
+    Controllers --> Models
+    Controllers --> DescriptiveStatistics
+    Controllers --> LinearRegression
+}
+
+package "Calculator End-To-End Tests via Playwright" #lightyellow {
+    class CalculatorEndToEndTests {
+        + CalculatorUI_PageTitle_ReturnsCalculator()
+        + CalculatorUI_ComputeMean_ReturnsResult()
+        + CalculatorUI_EmptyInput_DisplaysError()
+        + CalculatorUI_ComputeLinearRegression_ReturnsFormula()
+    }
+
+    CalculatorEndToEndTests --> Controllers : HTTP Call to Calculator Web Server App
+}
+
+cloud #yellow {
+    hide circle
+    class Browser
+    Browser <--> Controllers : HTTP Call
+}
+@enduml

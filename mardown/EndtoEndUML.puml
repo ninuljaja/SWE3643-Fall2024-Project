@@ -1,0 +1,13 @@
+@startuml
+allowmixing
+package "Calculator End-To-End Tests via Playwright" #lightyellow {
+    class CalculatorEndToEndTests {
+        + CalculatorUI_PageTitle_ReturnsCalculator()
+        + CalculatorUI_ComputeMean_ReturnsResult()
+        + CalculatorUI_EmptyInput_DisplaysError()
+        + CalculatorUI_ComputeLinearRegression_ReturnsFormula()
+    }
+
+    CalculatorEndToEndTests --> Controllers : HTTP Call to Calculator Web Server App
+}
+@enduml
