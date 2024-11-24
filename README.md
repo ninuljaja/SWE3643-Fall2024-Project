@@ -18,7 +18,9 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 
 ## Architecture
 The web-based calculator application is built using the following architecture:
-![Alt text](C:\Users\lanvu\OneDrive\Desktop\SWE3643-QA-Project\out\__WorkspaceFolder__\mardown\umlDiagram\umlDiagram.png "Uml Diagram")
+<img src="out\__WorkspaceFolder__\mardown\umlDiagram\umlDiagram.png" alt="image-20240204220021325" style="zoom: 50%;" />
+![Alt text](out/__WorkspaceFolder__/mardown/umlDiagram/umlDiagram.png)
+
 
 - **Testing Frameworks:** [Unit testing and E2E tools]
 - **Deployment:** [Hosting platform/environment]
