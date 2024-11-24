@@ -226,8 +226,9 @@ cd SWE3643-QA-Project
 3. **Install Maven dependencies without running tests:** 
 ```terminal
 mvn clean install -DskipTests 
-![alt text](image-2.png)
 ```
+![alt text](image-2.png)
+
 
 4. **Set up Playwright for end-to-end tests:** 
 ```bash
