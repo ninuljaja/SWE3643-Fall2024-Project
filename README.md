@@ -128,13 +128,14 @@ echo %JAVA_HOME%
 
    /usr/lib/jvm/java-21-openjdk-amd64 
 
-   Verify PATH Configuration 
+   3. **Verify PATH Configuration** 
 
    Ensure the bin directory of JDK 21 is in your system PATH: 
 
    On Windows: 
+   ```terminal
    echo %JAVA_HOME% 
-
+   ```
 **Look for:**
 
 C:\Program Files\Java\jdk-21\bin 
@@ -142,10 +143,11 @@ C:\Program Files\Java\jdk-21\bin
 ![alt text](echoPath_output.png)
 
 On Linux/Mac: 
-
+```bash
 echo $PATH 
+```
 
-Look for: 
+***Look for:*** 
 
 /usr/lib/jvm/java-21-openjdk-amd64/bin 
 
@@ -158,7 +160,7 @@ If Java 21 is not installed:
 Download and install JDK 21 from the [official site](https://www.oracle.com/java/technologies/javase-downloads.html).
 
 
-Set the JAVA_HOME environment variable and add the bin directory to your system's PATH. 
+5. Set the ***JAVA_HOME*** environment variable and add the bin directory to your system's PATH. 
 
 For Maven and Node.js: 
 
@@ -169,19 +171,19 @@ Install Maven from [Maven Downloads](https://maven.apache.org/download.cgi).
 
 mvn -version 
 
-Look for the Java version listed. Verify that Java 21 is used. If this shows Java 17 or an earlier version, Maven is not using the correct JDK. 
+Look for the Java version listed. Verify that ***Java 21*** is used. If this shows ***Java 17*** or an earlier version, Maven is not using the correct JDK. 
 
 **Set the Correct JDK for Maven** 
 
 Maven uses the JDK specified in your JAVA_HOME environment variable. 
 
-Set **JAVA_HOME** to the path of JDK 21: 
+6. Set **JAVA_HOME** to the path of JDK 21: 
 
-set **JAVA_HOME**=C:\Program Files\Java\jdk-21 
+7. Set **JAVA_HOME**=C:\Program Files\Java\jdk-21 
 
 ![alt text](image.png)
 
-set PATH=%JAVA_HOME%\bin;%PATH% 
+8. set PATH=%JAVA_HOME%\bin;%PATH% 
 
 **Verify Maven now uses JDK 21:** 
 
@@ -202,9 +204,6 @@ npm -v
 
  ---
 
- 
-
-**Install Dependencies** 
 
 Navigate to the root directory of the repository : 
 
@@ -219,42 +218,45 @@ cd SWE3643-QA-Project
 
 **Install Dependencies** 
 
-Navigate to the root directory of the repository : 
-
+2. Navigate to the root directory of the repository : 
+```bash
 cd SWE3643-QA-Project 
+```
 
-**Install Maven dependencies without running tests:** 
-
+3. **Install Maven dependencies without running tests:** 
+```terminal
 mvn clean install -DskipTests 
 ![alt text](image-2.png)
+```
 
-**Set up Playwright for end-to-end tests:** 
-
+4. **Set up Playwright for end-to-end tests:** 
+```bash
 npx playwright install 
-
+```
 
 **Running the Application** 
 
 To run the application locally: 
 
-Navigate to the web module directory: 
+5. Navigate to the web module directory: 
 
 cd src/web 
 
-**Start the application:** 
-
-mvn spring-boot:run 
+6. **Start the application:** 
+```bash
+mvn spring-boot:run
+```
 ![alt text](image-4.png)
 ![alt text](image-5.png)
 
-Once started, open a browser and connect to: 
+7. Once started, open a browser and connect to: 
 
 http://localhost:8080 
 
 ![alt text](image-6.png)
 
-Running Tests 
+**Running Tests** 
 
-To execute tests run: 
+8. To execute tests run: 
 
 mvn test 
