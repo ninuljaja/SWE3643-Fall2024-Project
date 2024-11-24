@@ -111,9 +111,10 @@ If Java is Not Installed: You'll see an error like 'java' is not recognized as a
 
 **Check JAVA_HOME Environment Variable** 
 
-   On Windows: 
+   On Windows:
 
-   echo %JAVA_HOME% 
+   
+   echo %JAVA_HOME% ```bash
 
    Expected Output: 
 
