@@ -1,0 +1,14 @@
+@startuml
+allowmixing
+package "Calculator Logic Unit Tests via JUnit" #lightyellow {
+    class LogicUnitTests {
+        + DescriptiveStatistics_NullValueList_ThrowsException()
+        + DescriptiveStatistics_ValidValues_ReturnsMean()
+        + LinearRegression_EmptyInput_ReturnsError()
+        + LinearRegression_ValidPairs_ReturnsFormula()
+    }
+
+    LogicUnitTests --> DescriptiveStatistics
+    LogicUnitTests --> LinearRegression
+}
+@enduml

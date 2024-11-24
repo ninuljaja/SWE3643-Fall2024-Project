@@ -18,7 +18,7 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 
 ## Architecture
 The web-based calculator application is built using the following architecture:
-<img src="umlDiagram.png" alt="image-20240204220021325" style="zoom: 50%;" />
+<img src="umlDiagram.png" style="zoom: 50%;" />
 
 
 - **Testing Frameworks:** [Unit testing and E2E tools]
@@ -33,8 +33,25 @@ Check Java Installation
 Open a terminal (Command Prompt, PowerShell, or a Linux/Mac terminal) and type: 
 
 java -version 
-<img src="image.png" style="zoom: 50%;" />
+<img src="terminalJava.png" style="zoom: 50%;" />
 
+If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
+
+Verify JDK Installation 
+
+To confirm the JDK is correctly installed, type: 
+
+javac -version 
+
+Expected Output: 
+
+javac 21.0.4 
+
+Check JAVA_HOME Environment Variable 
+
+On Windows: 
+
+echo %JAVA_HOME% 
 
 ## Executing the Web Application
 
