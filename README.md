@@ -103,9 +103,9 @@ If Java is Not Installed: You'll see an error like 'java' is not recognized as a
 **Verify JDK Installation** 
 
 2. To confirm the JDK is correctly installed, type: 
-  
+   ```bash
    javac -version 
-    ```bash
+    
 **Expected Output:** 
 ![alt text](javac_cmd.png)
 
