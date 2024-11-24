@@ -19,6 +19,34 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 ## Architecture
 The web-based calculator application is built using the following architecture:
 - **Frontend:** [Java]
+@startuml
+skinparam packageStyle rectangle
+
+package "org.example" {
+  class "CalculatorEndToEndTests" {
+    <<Test Suite>>
+    + WebCalculator_PageTitle_ReturnsCalculator(Page page)
+    + WebCalculator_ComputeSampleStdDev_ReturnsResult(Page page)
+    + WebCalculator_ComputePopulationStdDevWithEmptyInputBox_ReturnsInvalidInputError(Page page)
+    + WebCalculator_ComputeSampleStdDevWithOneValue_ReturnInvalidInputError(Page page)
+    + WebCalculator_ComputeMean_ReturnResult(Page page)
+    + WebCalculator_ComputeZScore_ReturnResult(Page page)
+    + WebCalculator_ComputeLinearRegressionFormula_ReturnResult(Page page)
+    + WebCalculator_PredictY_ReturnResult(Page page)
+    + WebCalculator_PressClearButton_ValuesTextAreaCleared(Page page)
+    + WebCalculator_NonNumericInput_InvalidInputError(Page page)
+    + WebCalculator_ComputePopulationStdDev_ReturnsResult(Page page)
+  }
+}
+
+class "Page" {
+  <<Playwright Component>>
+}
+
+CalculatorEndToEndTests --> Page : Dependency
+
+@enduml
+
 - **Backend:** [Java]
 - **Testing Frameworks:** [Unit testing and E2E tools]
 - **Deployment:** [Hosting platform/environment]
