@@ -14,8 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @UsePlaywright
 public class CalculatorEndToEndTests {
 
-
-
     @Test
     void WebCalculator_PageTitle_ReturnsCalculator(Page page) {
         //preq-E2E-TEST-5
