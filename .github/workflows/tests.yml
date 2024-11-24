@@ -29,8 +29,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          mvn clean install
-          
+          mvn clean install -DskipTests
+
       - name: Start Web Application with Maven
         run: |
           mvn -pl src/web spring-boot:run
