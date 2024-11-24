@@ -26,6 +26,11 @@ jobs:
         run: |
           npx playwright install
 
+
+      - name: Install dependencies
+        run: |
+          mvn clean install
+          
       - name: Start Web Application with Maven
         run: |
           mvn -pl src/web spring-boot:run
@@ -34,10 +39,6 @@ jobs:
             echo "Waiting for application to start..."
             sleep 5
           done
-
-      - name: Install dependencies
-        run: |
-          mvn clean install
 
 
       - name: Run tests
