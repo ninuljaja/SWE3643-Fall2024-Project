@@ -109,21 +109,21 @@ If Java is Not Installed: You'll see an error like 'java' is not recognized as a
 **Expected Output:** 
 ![alt text](javac_cmd.png)
 
-**Check JAVA_HOME Environment Variable** 
+**Check JAVA_HOME Environment Variable**
 
-   On Windows:
-   
-   echo %JAVA_HOME% 
-   bash```
+On Windows:
 
+```terminal
+echo %JAVA_HOME%
+```
    Expected Output: 
 
    C:\Program Files\Java\jdk-21 
 
    On Linux/Mac: 
-
+```bash
    echo $JAVA_HOME 
-
+```
    Expected Output: 
 
    /usr/lib/jvm/java-21-openjdk-amd64 
