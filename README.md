@@ -1,6 +1,7 @@
 # KSU SWE 3643 Software Testing and Quality Assurance Semester Project: Web-Based Calculator
 
 This repository contains the semester project for the KSU SWE 3643 Software Testing and Quality Assurance course. The project is a web-based calculator application designed to demonstrate software testing principles, including unit testing, end-to-end testing, and test coverage analysis. It also includes a final video presentation showcasing the project's outcomes.
+---
 
 ## Table of Contents
 1. [Team Members](#team-members)
@@ -11,6 +12,8 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 6. [Reviewing Unit Test Coverage](#reviewing-unit-test-coverage)
 7. [Executing End-To-End Tests](#executing-end-to-end-tests)
 8. [Final Video Presentation](#final-video-presentation)
+
+---
 
 ## Team Members
 - Member 1: Lan Vu, Documentation
@@ -81,6 +84,8 @@ These tests verify the system's functionality as a whole by simulating real-worl
 This combination of unit and end-to-end testing ensures both the correctness of individual components and the seamless integration of the entire system.
 
 - **Deployment:** [Hosting platform/environment]
+
+---
 
 ## Environment
 To set up and run the project, the following environment is required:
@@ -199,15 +204,8 @@ mvn -v
 node -v 
 
 npm -v 
-
- 
-
  ---
 
-
-Navigate to the root directory of the repository : 
-
-cd SWE3643-QA-Project 
 ## Executing the Web Application
 
 **To execute the web application locally:**
@@ -240,8 +238,9 @@ npx playwright install
 To run the application locally: 
 
 5. Navigate to the web module directory: 
-
+```bash
 cd src/web 
+```
 
 6. **Start the application:** 
 ```bash
@@ -259,5 +258,12 @@ http://localhost:8080
 **Running Tests** 
 
 8. To execute tests run: 
-
+```bash
 mvn test 
+```
+---
+
+## Executing Unit Tests
+## Reviewing Unit Test Coverage
+## Executing End-To-End Tests
+## Final Video Presentation
