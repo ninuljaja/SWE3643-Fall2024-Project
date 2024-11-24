@@ -76,7 +76,7 @@ These tests verify the system's functionality as a whole by simulating real-worl
 4. **CalculatorUI_ComputeLinearRegression_ReturnsFormula()**  
    Tests the UI flow for performing linear regression and displaying the resulting formula.
 
----
+
 
 This combination of unit and end-to-end testing ensures both the correctness of individual components and the seamless integration of the entire system.
 
@@ -102,8 +102,7 @@ To confirm the JDK is correctly installed, type:
 javac -version 
 
 Expected Output: 
-
-javac 21.0.4 
+<img src ="C:\Users\lanvu\Downloads\javac_cmd.png>
 
 Check JAVA_HOME Environment Variable 
 
