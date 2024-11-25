@@ -18,10 +18,10 @@ package "Calculator Logic Module" #lightblue {
 
 package "Calculator Logic Unit Tests via JUnit" #lightyellow {
     class LogicUnitTests {
-        + DescriptiveStatistics_NullValueList_ThrowsException()
-        + DescriptiveStatistics_ValidValues_ReturnsMean()
-        + LinearRegression_EmptyInput_ReturnsError()
-        + LinearRegression_ValidPairs_ReturnsFormula()
+        + DescriptiveStatistics_computeMean_ReceiveNullValueList_ThrowException()
+        + DescriptiveStatistics_computeMean_ReceiveEmptyValueList_ThrowException()
+        + DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException()
+        + LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
     }
 
     LogicUnitTests --> DescriptiveStatistics
@@ -29,37 +29,44 @@ package "Calculator Logic Unit Tests via JUnit" #lightyellow {
 }
 
 package "Calculator Web Server App" #lightblue {
-    class Models
-    class Views
-    class Controllers {
-        + computeMean(values: String): CalculationResult
-        + computeSampleStandardDeviation(values: String): CalculationResult
-        + computePopulationStandardDeviation(values: String): CalculationResult
-        + computeZscore(values: String): CalculationResult
-        + computeLinearRegression(values: String): CalculationResult
-        + computePredictedY(values: String): CalculationResult
+    package "src" {
+        class WebCalculator {
+            + main(args: String[])
+        }
+
+        class WebController {
+            + computeMean(values: String): CalculationResult
+            + computeSampleStandardDeviation(values: String): CalculationResult
+            + computePopulationStandardDeviation(values: String): CalculationResult
+            + computeZscore(values: String): CalculationResult
+            + computeLinearRegression(values: String): CalculationResult
+            + computePredictedY(values: String): CalculationResult
+        }
+
+        class Index.html {
+        }
+
+        WebController --> DescriptiveStatistics
+        WebController --> LinearRegression
+        WebController --> Index.html
     }
 
-    Controllers --> Views
-    Controllers --> Models
-    Controllers --> DescriptiveStatistics
-    Controllers --> LinearRegression
+    WebCalculator ..> WebController 
 }
 
 package "Calculator End-To-End Tests via Playwright" #lightyellow {
     class CalculatorEndToEndTests {
         + CalculatorUI_PageTitle_ReturnsCalculator()
-        + CalculatorUI_ComputeMean_ReturnsResult()
-        + CalculatorUI_EmptyInput_DisplaysError()
-        + CalculatorUI_ComputeLinearRegression_ReturnsFormula()
+        + CWebCalculator_ComputeZScore_ReturnResult()
+        + WebCalculator_PredictY_ReturnResult()
+        + WebCalculator_ComputePopulationStdDev_ReturnsResult()
     }
 
-    CalculatorEndToEndTests --> Controllers : HTTP Call to Calculator Web Server App
+    CalculatorEndToEndTests --> WebController 
 }
 
 cloud #yellow {
     hide circle
     class Browser
-    Browser <--> Controllers : HTTP Call
-}
+    Browser <--> WebController 
 @enduml

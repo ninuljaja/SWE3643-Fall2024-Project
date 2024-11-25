@@ -17,8 +17,8 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 ---
 
 ## Team Members
-- Member 1: Lan Vu, Documentation
-- Member 2: Nino Tkabladze, Developer
+- Member 1: Lan Vu
+- Member 2: Nino Tkabladze
 
 ## Architecture
 ![alt text](umlDiagram.png)
@@ -62,6 +62,7 @@ This component tests the core functionality of the logic module using unit tests
 4. **LinearRegression_ValidPairs_ReturnsFormula()**  
    Tests the generation of the linear regression formula for valid input pairs.
 
+***This is only some of the test out of the 47 test case***
 ---
 
 ## Calculator End-to-End Tests via Playwright
@@ -267,7 +268,7 @@ mvn test
 ## Reviewing Unit Test Coverage
 ![alt text](image-7.png)
 
-It run all 47 test
+To achieve 100% and to catch possible all error, we use 47 test cases.
 
 ![alt text](image-9.png)
 
