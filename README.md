@@ -19,7 +19,7 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 
 ## Team Members
 - Member 1: Lan Vu, Documentation
-- Member 2: Nino, Developer
+- Member 2: Nino Tkabladze, Developer
 
 ## Architecture
 ![alt text](umlDiagram.png)
