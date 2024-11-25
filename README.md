@@ -257,8 +257,10 @@ http://localhost:8080
 ![alt text](image-6.png)
 
 **Running Tests** 
+1. Open a new command line and navigate to the root directory of a repository
 
-8. To execute tests run: 
+
+2. To execute tests run: 
 ```bash
 mvn test 
 ```
