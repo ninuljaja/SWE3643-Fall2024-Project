@@ -48,7 +48,7 @@ CalculationResult is used across modules to standardize the computation output.
 ## Calculator Logic Unit Tests via JUnit
 This component tests the core functionality of the logic module using unit tests written in **JUnit**. These tests ensure the reliability and correctness of the core calculations.
 
-![alt text](UnitTestUML.png)
+![alt text](mardown\assest\UnitTestUML.png)
 ### Test Cases:
 1. **DescriptiveStatistics_NullValueList_ThrowsException()**  
    Ensures that null values are handled properly and appropriate exceptions are thrown.
@@ -66,7 +66,7 @@ This component tests the core functionality of the logic module using unit tests
 
 ## Calculator End-to-End Tests via Playwright
 These tests verify the system's functionality as a whole by simulating real-world scenarios using **Playwright** for browser automation. The focus is on ensuring that the application behaves as expected from the user's perspective.
-![alt text](EndtoEndUML.png)
+![alt text](mardown\assest\EndtoEndUML.png)
 ### Test Cases:
 1. **CalculatorUI_PageTitle_ReturnsCalculator()**  
    Validates that the page title is displayed correctly in the browser.
