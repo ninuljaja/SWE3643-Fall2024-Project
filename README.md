@@ -59,9 +59,13 @@ Validates that the computeMean method correctly throws an exception when an empt
 - DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException()
 "Ensures the computeMean method throws an exception when the input contains non-numeric values."
 
+<<<<<<< Updated upstream
 - LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
 Tests the computeLinearRegressionFormula method to verify it returns the correct linear regression formula for valid input values."
 ***This is only some of the test out of the 47 test case***
+=======
+***This is only some of the test out of the 47 test cases***
+>>>>>>> Stashed changes
 ---
 
 #### Calculator End-to-End Tests via Playwright
@@ -181,14 +185,15 @@ Look for the Java version listed. Verify that ***Java 21*** is used. If this sho
 **Set the Correct JDK for Maven** 
 
 Maven uses the JDK specified in your JAVA_HOME environment variable. 
-```bash
-- set JAVA_HOME to the path of JDK 21: 
 
+- Set JAVA_HOME to the path of JDK 21: 
+
+```bash
 - set JAVA_HOME=C:\Program Files\Java\jdk-21 
 
 - set PATH=%JAVA_HOME%\bin;%PATH% 
 ```
-**Verify Maven now uses JDK 21:** 
+- Verify Maven now uses JDK 21:** 
 ```bash
 mvn -v 
 ```
@@ -265,7 +270,7 @@ mvn test
 ## Reviewing Unit Test Coverage
 ![alt text](image-7.png)
 
-To achieve 100% and to catch possible all error, we use 47 test cases.
+To achieve 100% and in an attempt to catch possible all error, we use 47 test cases.
 
 ![alt text](image-9.png)
 
