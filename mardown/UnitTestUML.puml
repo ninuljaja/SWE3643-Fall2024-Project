@@ -2,10 +2,10 @@
 allowmixing
 package "Calculator Logic Unit Tests via JUnit" #lightyellow {
     class LogicUnitTests {
-        + DescriptiveStatistics_NullValueList_ThrowsException()
-        + DescriptiveStatistics_ValidValues_ReturnsMean()
-        + LinearRegression_EmptyInput_ReturnsError()
-        + LinearRegression_ValidPairs_ReturnsFormula()
+        + DescriptiveStatistics_computeMean_ReceiveNullValueList_ThrowException()
+        + DescriptiveStatistics_computeMean_ReceiveEmptyValueList_ThrowException()
+        + DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException()
+        + LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
     }
 
     LogicUnitTests --> DescriptiveStatistics

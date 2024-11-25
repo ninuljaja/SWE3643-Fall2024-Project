@@ -21,7 +21,7 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 - Member 2: Nino Tkabladze
 
 ## Architecture
-![alt text](umlDiagram.png)
+![alt text](image-10.png)
 ### Calculator Logic Module
 This module encapsulates the core logic of the calculator app. Each class and method is responsible for a distinct task, ensuring modularity and maintainability:
 
@@ -48,38 +48,37 @@ CalculationResult is used across modules to standardize the computation output.
 ### Calculator Logic Unit Tests via JUnit
 This component tests the core functionality of the logic module using unit tests written in **JUnit**. These tests ensure the reliability and correctness of the core calculations.
 
-![alt text](UnitTestUML.png)
+![alt text](image-11.png)
 #### Test Cases:
-1. **DescriptiveStatistics_NullValueList_ThrowsException()**  
-   Ensures that null values are handled properly and appropriate exceptions are thrown.
+- DescriptiveStatistics_computeMean_ReceiveNullValueList_ThrowException()
+Tests the computeMean method to ensure that it throws an exception when a null value list is provided."
 
-2. **DescriptiveStatistics_ValidValues_ReturnsMean()**  
-   Tests the computation of the mean for valid input values.
+- DescriptiveStatistics_computeMean_ReceiveEmptyValueList_ThrowException()
+Validates that the computeMean method correctly throws an exception when an empty value list is given as input."
 
-3. **LinearRegression_EmptyInput_ReturnsError()**  
-   Validates that an error is returned when the input for linear regression is empty.
+- DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException()
+"Ensures the computeMean method throws an exception when the input contains non-numeric values."
 
-4. **LinearRegression_ValidPairs_ReturnsFormula()**  
-   Tests the generation of the linear regression formula for valid input pairs.
-
+- LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
+Tests the computeLinearRegressionFormula method to verify it returns the correct linear regression formula for valid input values."
 ***This is only some of the test out of the 47 test case***
 ---
 
 ### Calculator End-to-End Tests via Playwright
 These tests verify the system's functionality as a whole by simulating real-world scenarios using **Playwright** for browser automation. The focus is on ensuring that the application behaves as expected from the user's perspective.
-![alt text](EndtoEndUML.png)
+![alt text](image-12.png)
 #### Test Cases:
-1. **CalculatorUI_PageTitle_ReturnsCalculator()**  
-   Validates that the page title is displayed correctly in the browser.
+- CalculatorUI_PageTitle_ReturnsCalculator()
+Validates that the Calculator UI displays the correct page title when loaded."
 
-2. **CalculatorUI_ComputeMean_ReturnsResult()**  
-   Tests the user interface flow for calculating the mean and returning a result.
+- CWebCalculator_ComputeZScore_ReturnResult()
+Tests the ComputeZScore functionality in the Calculator UI to ensure it returns the correct result for valid inputs."
 
-3. **CalculatorUI_EmptyInput_DisplaysError()**  
-   Ensures that the application displays proper error messages when the input field is empty.
+- WebCalculator_PredictY_ReturnResult()
+Ensures that the PredictY functionality in the Calculator UI provides the correct predicted value for given input parameters."
 
-4. **CalculatorUI_ComputeLinearRegression_ReturnsFormula()**  
-   Tests the UI flow for performing linear regression and displaying the resulting formula.
+- WebCalculator_ComputePopulationStdDev_ReturnsResult()
+Verifies that the Calculator UI accurately computes the population standard deviation for valid inputs."
 
 
 
