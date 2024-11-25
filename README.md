@@ -62,7 +62,7 @@ Validates that the computeMean method correctly throws an exception when an empt
 - LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
 Tests the computeLinearRegressionFormula method to verify it returns the correct linear regression formula for valid input values."
 
-***This is only some of the test out of the 47 test cases***
+***This is only some of the test out of the 46 test cases***
 
 ---
 
