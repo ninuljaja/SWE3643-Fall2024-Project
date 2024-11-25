@@ -2,6 +2,7 @@
 ---
 ## Introduction
 This repository contains the semester project for the KSU SWE 3643 Software Testing and Quality Assurance course. The project is a web-based calculator application designed to demonstrate software testing principles, including unit testing, end-to-end testing, and test coverage analysis. It also includes a final video presentation showcasing the project's outcomes.
+
 ---
 
 ## Table of Contents
