@@ -59,13 +59,9 @@ Validates that the computeMean method correctly throws an exception when an empt
 - DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException()
 "Ensures the computeMean method throws an exception when the input contains non-numeric values."
 
-<<<<<<< Updated upstream
 - LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
 Tests the computeLinearRegressionFormula method to verify it returns the correct linear regression formula for valid input values."
 ***This is only some of the test out of the 47 test case***
-=======
-***This is only some of the test out of the 47 test cases***
->>>>>>> Stashed changes
 ---
 
 #### Calculator End-to-End Tests via Playwright
