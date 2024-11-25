@@ -102,6 +102,7 @@ To set up and run the project, the following environment is required:
    ```bash
    java -version
 
+**Expected Output:** 
 <img src="terminalJava.png" style="zoom: 50%;" />
 
 If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
@@ -157,7 +158,6 @@ echo $PATH
 
 /usr/lib/jvm/java-21-openjdk-amd64/bin 
 
-Shape 
 
 **Install Prerequisites** 
 
@@ -166,7 +166,7 @@ If Java 21 is not installed:
 Download and install JDK 21 from the [official site](https://www.oracle.com/java/technologies/javase-downloads.html).
 
 
-5. Set the ***JAVA_HOME*** environment variable and add the bin directory to your system's PATH. 
+- Set the ***JAVA_HOME*** environment variable and add the bin directory to your system's PATH. 
 
 For Maven and Node.js: 
 
@@ -174,27 +174,26 @@ Install Maven from [Maven Downloads](https://maven.apache.org/download.cgi).
 
 
 **Verify that Maven is installed** 
-
+```bash
 mvn -version 
+```
 
 Look for the Java version listed. Verify that ***Java 21*** is used. If this shows ***Java 17*** or an earlier version, Maven is not using the correct JDK. 
 
 **Set the Correct JDK for Maven** 
 
 Maven uses the JDK specified in your JAVA_HOME environment variable. 
+```bash
+- set JAVA_HOME to the path of JDK 21: 
 
-6. Set **JAVA_HOME** to the path of JDK 21: 
+- set JAVA_HOME=C:\Program Files\Java\jdk-21 
 
-7. Set **JAVA_HOME**=C:\Program Files\Java\jdk-21 
-
-![alt text](image.png)
-
-8. set PATH=%JAVA_HOME%\bin;%PATH% 
-
+- set PATH=%JAVA_HOME%\bin;%PATH% 
+```
 **Verify Maven now uses JDK 21:** 
-
+```bash
 mvn -v 
-
+```
 ![alt text](image-1.png)
 
 **Install Node.js from the [official site](https://nodejs.org/).**
