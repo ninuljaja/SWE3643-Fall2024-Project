@@ -103,7 +103,8 @@ To set up and run the project, the following environment is required:
    java -version
 
 **Expected Output:** 
-<img src="terminalJava.png" style="zoom: 50%;" />
+
+![alt text](terminalJava.png)
 
 If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
 
@@ -114,6 +115,7 @@ If Java is Not Installed: You'll see an error like 'java' is not recognized as a
    javac -version 
     
 **Expected Output:** 
+
 ![alt text](javac_cmd.png)
 
 **Check JAVA_HOME Environment Variable**
@@ -195,6 +197,9 @@ Maven uses the JDK specified in your JAVA_HOME environment variable.
 ```bash
 mvn -v 
 ```
+
+**Expected Output:** 
+
 ![alt text](image-1.png)
 
 **Install Node.js from the [official site](https://nodejs.org/).**
@@ -250,6 +255,8 @@ mvn spring-boot:run
 ```
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+
+If you see an error like Failed to bind to http://localhost:8080, another process is using the port. Kill the process and try again
 
 7. Once started, open a browser and connect to: 
 
