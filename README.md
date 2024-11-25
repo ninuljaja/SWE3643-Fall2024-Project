@@ -21,7 +21,7 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 - Member 2: Nino Tkabladze
 
 ## Architecture
-![alt text](image-10.png)
+![alt text](assets/image-10.png)
 ### Calculator Logic Module
 This module encapsulates the core logic of the calculator app. Each class and method is responsible for a distinct task, ensuring modularity and maintainability:
 
@@ -48,7 +48,7 @@ CalculationResult is used across modules to standardize the computation output.
 #### Calculator Logic Unit Tests via JUnit
 This component tests the core functionality of the logic module using unit tests written in **JUnit**. These tests ensure the reliability and correctness of the core calculations.
 
-![alt text](image-11.png)
+![alt text](assets/image-11.png)
 #### Test Cases:
 - DescriptiveStatistics_computeMean_ReceiveNullValueList_ThrowException()
 Tests the computeMean method to ensure that it throws an exception when a null value list is provided."
@@ -68,7 +68,7 @@ Tests the computeLinearRegressionFormula method to verify it returns the correct
 
 #### Calculator End-to-End Tests via Playwright
 These tests verify the system's functionality as a whole by simulating real-world scenarios using **Playwright** for browser automation. The focus is on ensuring that the application behaves as expected from the user's perspective.
-![alt text](image-12.png)
+![alt text](assets/image-12.png)
 #### Test Cases:
 - CalculatorUI_PageTitle_ReturnsCalculator()
 Validates that the Calculator UI displays the correct page title when loaded."
@@ -104,7 +104,7 @@ To set up and run the project, the following environment is required:
 
 **Expected Output:** 
 
-![alt text](terminalJava.png)
+![alt text](assets/terminalJava.png)
 
 If Java is Not Installed: You'll see an error like 'java' is not recognized as an internal or external command.... 
 
@@ -116,7 +116,7 @@ If Java is Not Installed: You'll see an error like 'java' is not recognized as a
     
 **Expected Output:** 
 
-![alt text](javac_cmd.png)
+![alt text](assets/javac_cmd.png)
 
 **Check JAVA_HOME Environment Variable**
 
@@ -200,7 +200,7 @@ mvn -v
 
 **Expected Output:** 
 
-![alt text](image-1.png)
+![alt text](assets/image-1.png)
 
 **Install Node.js from the [official site](https://nodejs.org/).**
 
@@ -232,7 +232,7 @@ cd SWE3643-QA-Project
 ```terminal
 mvn clean install -DskipTests 
 ```
-![alt text](image-2.png)
+![alt text](assets/image-2.png)
 
 
 4. **Set up Playwright for end-to-end tests:** 
@@ -253,8 +253,8 @@ cd src/web
 ```bash
 mvn spring-boot:run
 ```
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](assets/image-4.png)
+![alt text](assets/image-5.png)
 
 If you see an error like Failed to bind to http://localhost:8080, another process is using the port. Kill the process and try again
 
@@ -262,7 +262,7 @@ If you see an error like Failed to bind to http://localhost:8080, another proces
 
 http://localhost:8080 
 
-![alt text](image-6.png)
+![alt text](assets/image-6.png)
 
 ## Executing Unit Tests
 1. Open a new command line and navigate to the root directory of a repository
@@ -273,15 +273,15 @@ http://localhost:8080
 mvn test 
 ```
 ## Reviewing Unit Test Coverage
-![alt text](image-7.png)
+![alt text](assets/image-7.png)
 
 To achieve 100% and in an attempt to catch possible all error, we use 47 test cases.
 
-![alt text](image-9.png)
+![alt text](assets/image-9.png)
 
 100% coverage was achieved
 ## Executing End-To-End Tests
 Since the playwright test use maven plugin, the End to end test is exectuted with the command mvn test along with Unit Test.
 
-![alt text](image-8.png)
+![alt text](assets/image-8.png)
 ## Final Video Presentation
