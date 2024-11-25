@@ -21,7 +21,6 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 
 ## Architecture
 ![alt text](umlDiagram.png)
-
 ## Calculator Logic Module
 This module encapsulates the core logic of the calculator app. Each class and method is responsible for a distinct task, ensuring modularity and maintainability:
 
@@ -48,7 +47,7 @@ CalculationResult is used across modules to standardize the computation output.
 ## Calculator Logic Unit Tests via JUnit
 This component tests the core functionality of the logic module using unit tests written in **JUnit**. These tests ensure the reliability and correctness of the core calculations.
 
-![alt text](mardown\assest\UnitTestUML.png)
+![alt text](UnitTestUML.png)
 ### Test Cases:
 1. **DescriptiveStatistics_NullValueList_ThrowsException()**  
    Ensures that null values are handled properly and appropriate exceptions are thrown.
@@ -66,7 +65,7 @@ This component tests the core functionality of the logic module using unit tests
 
 ## Calculator End-to-End Tests via Playwright
 These tests verify the system's functionality as a whole by simulating real-world scenarios using **Playwright** for browser automation. The focus is on ensuring that the application behaves as expected from the user's perspective.
-![alt text](mardown\assest\EndtoEndUML.png)
+![alt text](EndtoEndUML.png)
 ### Test Cases:
 1. **CalculatorUI_PageTitle_ReturnsCalculator()**  
    Validates that the page title is displayed correctly in the browser.
@@ -205,6 +204,7 @@ mvn -v
 node -v 
 
 npm -v 
+
  ---
 
 ## Executing the Web Application
