@@ -60,7 +60,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeMean receives valid values - return mean")
-    void DescriptiveStatistics_computeMean_ReceiveValidValues_ThrowException() {
+    void DescriptiveStatistics_computeMean_ReceiveValidValues_ReturnMean() {
         //preq-UNIT-TEST-4
 
         // Arrange
