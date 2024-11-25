@@ -61,7 +61,9 @@ Validates that the computeMean method correctly throws an exception when an empt
 
 - LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula()
 Tests the computeLinearRegressionFormula method to verify it returns the correct linear regression formula for valid input values."
-***This is only some of the test out of the 47 test case***
+
+***This is only some of the test out of the 47 test cases***
+
 ---
 
 #### Calculator End-to-End Tests via Playwright
@@ -80,7 +82,7 @@ Ensures that the PredictY functionality in the Calculator UI provides the correc
 - WebCalculator_ComputePopulationStdDev_ReturnsResult()
 Verifies that the Calculator UI accurately computes the population standard deviation for valid inputs."
 
-
+***This is only some of the test out of the 11 test cases***
 
 This combination of unit and end-to-end testing ensures both the correctness of individual components and the seamless integration of the entire system.
 
