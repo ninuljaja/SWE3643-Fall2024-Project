@@ -47,4 +47,6 @@ jobs:
 
       - name: Run tests
         run: mvn test
-
+      - name: PlantUML Action
+        uses: Timmy/plantuml-action@v1
+            
