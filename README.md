@@ -275,7 +275,7 @@ mvn test
 ## Reviewing Unit Test Coverage
 ![alt text](assets/image-7.png)
 
-To achieve 100% and in an attempt to catch possible all error, we use 47 test cases.
+To achieve 100% and in an attempt to catch possible all error, we use 46 test cases.
 
 ![alt text](assets/image-9.png)
 
