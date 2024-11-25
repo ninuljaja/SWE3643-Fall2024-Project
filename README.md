@@ -6,14 +6,14 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 ---
 
 ## Table of Contents
-1. [Team Members](#team-members)
-2. [Architecture](#architecture)
-3. [Environment](#environment)
-4. [Executing the Web Application](#executing-the-web-application)
-5. [Executing Unit Tests](#executing-unit-tests)
-6. [Reviewing Unit Test Coverage](#reviewing-unit-test-coverage)
-7. [Executing End-To-End Tests](#executing-end-to-end-tests)
-8. [Final Video Presentation](#final-video-presentation)
+- [Team Members](#team-members)
+- [Architecture](#architecture)
+- [Environment](#environment)
+- [Executing the Web Application](#executing-the-web-application)
+- [Executing Unit Tests](#executing-unit-tests)
+- [Reviewing Unit Test Coverage](#reviewing-unit-test-coverage)
+- [Executing End-To-End Tests](#executing-end-to-end-tests)
+- [Final Video Presentation](#final-video-presentation)
 
 ---
 
