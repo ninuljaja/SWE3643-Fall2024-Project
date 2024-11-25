@@ -1,6 +1,5 @@
 # KSU SWE 3643 Software Testing and Quality Assurance Semester Project: Web-Based Calculator
----
-## Introduction
+
 This repository contains the semester project for the KSU SWE 3643 Software Testing and Quality Assurance course. The project is a web-based calculator application designed to demonstrate software testing principles, including unit testing, end-to-end testing, and test coverage analysis. It also includes a final video presentation showcasing the project's outcomes.
 ---
 
@@ -21,80 +20,6 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 - Member 2: Nino, Developer
 
 ## Architecture
-```plantuml
-@startuml
-allowmixing
-
-package "Calculator Logic Module" #lightblue {
-    class DescriptiveStatistics {
-        + ValidationFunctions
-        + LogicFunctions
-    }
-
-    class LinearRegression {
-        + ValidationFunctions
-        + LogicFunctions
-    }
-
-    DescriptiveStatistics ..> CalculationResult : uses
-    LinearRegression ..> CalculationResult : uses
-}
-
-package "Calculator Logic Unit Tests via JUnit" #lightyellow {
-    class LogicUnitTests {
-        + DescriptiveStatistics_NullValueList_ThrowsException()
-        + DescriptiveStatistics_ValidValues_ReturnsMean()
-        + LinearRegression_EmptyInput_ReturnsError()
-        + LinearRegression_ValidPairs_ReturnsFormula()
-    }
-
-    LogicUnitTests --> DescriptiveStatistics
-    LogicUnitTests --> LinearRegression
-}
-
-package "Calculator Web Server App" #lightblue {
-    package "src" {
-        class WebCalculator {
-            + main(args: String[])
-        }
-
-        class WebController {
-            + computeMean(values: String): CalculationResult
-            + computeSampleStandardDeviation(values: String): CalculationResult
-            + computePopulationStandardDeviation(values: String): CalculationResult
-            + computeZscore(values: String): CalculationResult
-            + computeLinearRegression(values: String): CalculationResult
-            + computePredictedY(values: String): CalculationResult
-        }
-
-        class Index.html {
-        }
-
-        WebController --> DescriptiveStatistics
-        WebController --> LinearRegression
-        WebController --> Index.html
-    }
-
-    WebCalculator ..> WebController 
-}
-package "Calculator End-To-End Tests via Playwright" #lightyellow {
-    class CalculatorEndToEndTests {
-        + CalculatorUI_PageTitle_ReturnsCalculator()
-        + CalculatorUI_ComputeMean_ReturnsResult()
-        + CalculatorUI_EmptyInput_DisplaysError()
-        + CalculatorUI_ComputeLinearRegression_ReturnsFormula()
-    }
-
-    CalculatorEndToEndTests --> WebController 
-}
-
-cloud #yellow {
-    hide circle
-    class Browser
-    Browser <--> WebController 
-@enduml
-```
-
 ![alt text](umlDiagram.png)
 ## Calculator Logic Module
 This module encapsulates the core logic of the calculator app. Each class and method is responsible for a distinct task, ensuring modularity and maintainability:
