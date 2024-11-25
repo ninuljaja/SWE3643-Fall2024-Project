@@ -22,7 +22,7 @@ This repository contains the semester project for the KSU SWE 3643 Software Test
 
 ## Architecture
 ![alt text](umlDiagram.png)
-## Calculator Logic Module
+### Calculator Logic Module
 This module encapsulates the core logic of the calculator app. Each class and method is responsible for a distinct task, ensuring modularity and maintainability:
 
 1. **DescriptiveStatistics**  
@@ -43,13 +43,13 @@ This module encapsulates the core logic of the calculator app. Each class and me
 Both DescriptiveStatistics and LinearRegression utilize ValidationFunctions and LogicFunctions.
 CalculationResult is used across modules to standardize the computation output.
 
-# Testing Frameworks: Unit Testing and E2E Tools
+### Testing Frameworks: Unit Testing and E2E Tools
 
-## Calculator Logic Unit Tests via JUnit
+### Calculator Logic Unit Tests via JUnit
 This component tests the core functionality of the logic module using unit tests written in **JUnit**. These tests ensure the reliability and correctness of the core calculations.
 
 ![alt text](UnitTestUML.png)
-### Test Cases:
+#### Test Cases:
 1. **DescriptiveStatistics_NullValueList_ThrowsException()**  
    Ensures that null values are handled properly and appropriate exceptions are thrown.
 
@@ -65,10 +65,10 @@ This component tests the core functionality of the logic module using unit tests
 ***This is only some of the test out of the 47 test case***
 ---
 
-## Calculator End-to-End Tests via Playwright
+### Calculator End-to-End Tests via Playwright
 These tests verify the system's functionality as a whole by simulating real-world scenarios using **Playwright** for browser automation. The focus is on ensuring that the application behaves as expected from the user's perspective.
 ![alt text](EndtoEndUML.png)
-### Test Cases:
+#### Test Cases:
 1. **CalculatorUI_PageTitle_ReturnsCalculator()**  
    Validates that the page title is displayed correctly in the browser.
 
@@ -85,13 +85,11 @@ These tests verify the system's functionality as a whole by simulating real-worl
 
 This combination of unit and end-to-end testing ensures both the correctness of individual components and the seamless integration of the entire system.
 
-- **Deployment:** [Hosting platform/environment]
-
 ---
 
 ## Environment
 To set up and run the project, the following environment is required:
-## Prerequisites
+### Prerequisites
 - **Java 21** is required.
 - **Maven** is required.
 - **Node.js** is required.
@@ -276,6 +274,5 @@ To achieve 100% and to catch possible all error, we use 47 test cases.
 ## Executing End-To-End Tests
 Since the playwright test use maven plugin, the End to end test is exectuted with the command mvn test along with Unit Test.
 
-## Reviewing End-To-End Test
 ![alt text](image-8.png)
 ## Final Video Presentation
