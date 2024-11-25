@@ -11,7 +11,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeMean receives Null Value List - Throw Exception")
-    void Calculator_computeMean_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computeMean_ReceiveNullValueList_ThrowException() {
         //preq-UNIT-TEST-4
 
         // Arrange
@@ -27,7 +27,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeMean receives Empty Value List - Throw Exception")
-    void Calculator_computeMean_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computeMean_ReceiveEmptyValueList_ThrowException() {
         //preq-UNIT-TEST-4
 
         // Arrange
@@ -43,7 +43,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeMean receives non-numeric value - Throw Exception")
-    void Calculator_computeMean_ReceiveNonNumericValue_ThrowException() {
+    void DescriptiveStatistics_computeMean_ReceiveNonNumericValue_ThrowException() {
         //preq-UNIT-TEST-4
 
         // Arrange
@@ -60,7 +60,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeMean receives valid values - return mean")
-    void Calculator_computeMean_ReceiveValidValues_ThrowException() {
+    void DescriptiveStatistics_computeMean_ReceiveValidValues_ThrowException() {
         //preq-UNIT-TEST-4
 
         // Arrange
@@ -81,7 +81,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSampleStandardDeviation receives Null Value List - Throw Exception")
-    void Calculator_computeSampleStandardDeviation_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computeSampleStandardDeviation_ReceiveNullValueList_ThrowException() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -98,7 +98,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSampleStandardDeviation receives Empty Value List - Throw Exception")
-    void Calculator_computeSampleStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computeSampleStandardDeviation_ReceiveEmptyValueList_ThrowException() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -114,7 +114,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSampleStandardDeviation receives one value - Throw Exception")
-    void Calculator_computeSampleStandardDeviation_ReceiveOneValue_ThrowException() {
+    void DescriptiveStatistics_computeSampleStandardDeviation_ReceiveOneValue_ThrowException() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -131,7 +131,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSampleStandardDeviation receives valid values - returns std dev")
-    void Calculator_computeSampleStandardDeviation_ReceiveValidValues_ReturnsStdDev() {
+    void DescriptiveStatistics_computeSampleStandardDeviation_ReceiveValidValues_ReturnsStdDev() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -148,7 +148,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSampleStandardDeviation receives all zeros values - returns std dev = 0")
-    void Calculator_computeSampleStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
+    void DescriptiveStatistics_computeSampleStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -166,7 +166,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computePopulationStandardDeviation receives one value - std dev should be 0")
-    void Calculator_computePopulationStandardDeviation_ReceiveOneValue_StdDevShouldBe0() {
+    void DescriptiveStatistics_computePopulationStandardDeviation_ReceiveOneValue_StdDevShouldBe0() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -181,7 +181,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computePopulationStandardDeviation receives valid values - returns std dev")
-    void Calculator_computePopulationStandardDeviation_ReceiveValidValues_ReturnStdDev() {
+    void DescriptiveStatistics_computePopulationStandardDeviation_ReceiveValidValues_ReturnStdDev() {
         ////preq-UNIT-TEST-2
 
         // Arrange
@@ -203,7 +203,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computePopulationStandardDeviation receives Null Value List - Throw Exception")
-    void Calculator_computePopulationStandardDeviation_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computePopulationStandardDeviation_ReceiveNullValueList_ThrowException() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -220,7 +220,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computePopulationStandardDeviation receives Empty Value List - Throw Exception")
-    void Calculator_computePopulationStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computePopulationStandardDeviation_ReceiveEmptyValueList_ThrowException() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -235,7 +235,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computePopulationStandardDeviation receives all zeros values - returns std dev = 0")
-    void Calculator_computePopulationStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
+    void DescriptiveStatistics_computePopulationStandardDeviation_ReceiveAllZeros_ReturnsStdDevEquals0() {
         //preq-UNIT-TEST-2
 
         // Arrange
@@ -253,7 +253,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeZscore receives Null Value - Throw Exception")
-    void Calculator_computeZscore_ReceivesNullValue_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesNullValue_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -270,7 +270,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeZscore receives Empty Value - Throw Exception")
-    void Calculator_computeZscore_ReceivesEmptyValue_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesEmptyValue_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -287,7 +287,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives one value - Throw Exception")
-    void Calculator_computeZscore_ReceivesOneValue_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesOneValue_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -303,7 +303,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives two values - Throw Exception")
-    void Calculator_computeZscore_ReceivesTwoValues_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesTwoValues_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -319,7 +319,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives four values - Throw Exception")
-    void Calculator_computeZscore_ReceivesFourValues_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesFourValues_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -335,7 +335,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives more than one line of values - Throw Exception")
-    void Calculator_computeZscore_ReceivesMoreThanOneLineOfValues_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesMoreThanOneLineOfValues_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -351,7 +351,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives three values, standard deviation value is zero - Throw Exception")
-    void Calculator_computeZscore_ReceivesValuesStdDevIsZero_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesValuesStdDevIsZero_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -368,7 +368,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives standard deviation = zero, mean = value - Throw Exception")
-    void Calculator_computeZscore_ReceivesStdDevIsZeroMeanEqualsValue_ThrowException() {
+    void DescriptiveStatistics_computeZscore_ReceivesStdDevIsZeroMeanEqualsValue_ThrowException() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -385,7 +385,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives mean = 0 - Returns Z-score = value/stdDev")
-    void Calculator_computeZscore_ReceivesMeanIsZero_ReturnZscore () {
+    void DescriptiveStatistics_computeZscore_ReceivesMeanIsZero_ReturnZscore () {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -402,7 +402,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeZscore receives valid values - returns Z-score")
-    void Calculator_computeZscore_ReceivesValidValues_ReturnsZscore() {
+    void DescriptiveStatistics_computeZscore_ReceivesValidValues_ReturnsZscore() {
         //preq-UNIT-TEST-5
 
         // Arrange
@@ -419,7 +419,7 @@ class LogicUnitTests {
     // Testing DescriptiveStatistic Helper methods
     @Test
     @DisplayName("computeMeanHelper receives Null Value List - Throw Exception")
-    void Calculator_computeMeanHelper_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computeMeanHelper_ReceiveNullValueList_ThrowException() {
         // Arrange
         String expectedMessage = "input cannot be null or empty";
         double[] values = null;
@@ -434,7 +434,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeMeanHelper receives Empty Value List - Throw Exception")
-    void Calculator_computeMeanHelper_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computeMeanHelper_ReceiveEmptyValueList_ThrowException() {
         // Arrange
         String expectedMessage = "input cannot be null or empty";
         double[] values = {};
@@ -449,7 +449,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeStandardDeviation receives Null Value List - Throw Exception")
-    void Calculator_computeStandardDeviation_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computeStandardDeviation_ReceiveNullValueList_ThrowException() {
         // Arrange
         double[] values = null;
         String expectedMessage = "input cannot be null or empty";
@@ -465,7 +465,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeStandardDeviation receives Empty Value List - Throw Exception")
-    void Calculator_computeStandardDeviation_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computeStandardDeviation_ReceiveEmptyValueList_ThrowException() {
         // Arrange
         double[] values = {};
         String expectedMessage = "input cannot be null or empty";
@@ -483,7 +483,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeSquareOfDifferences receives Null Value List - Throw Exception")
-    void Calculator_computeSquareOfDifferences_ReceiveNullValueList_ThrowException() {
+    void DescriptiveStatistics_computeSquareOfDifferences_ReceiveNullValueList_ThrowException() {
         // Arrange
         double[] values = null;
         String expectedMessage = "input cannot be null or empty";
@@ -498,7 +498,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("ComputeSquareOfDifferences receives Empty Value List - Throw Exception")
-    void Calculator_computeSquareOfDifferences_ReceiveEmptyValueList_ThrowException() {
+    void DescriptiveStatistics_computeSquareOfDifferences_ReceiveEmptyValueList_ThrowException() {
         // Arrange
         double[] values = {};
         String expectedMessage = "input cannot be null or empty";
@@ -514,7 +514,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeVariance receives NumValues = 1, isPopulation = false - Throw Exception")
-    void Calculator_computeVariance_ReceiveNumValuesOneIsPopulationFalse_ThrowException() {
+    void DescriptiveStatistics_computeVariance_ReceiveNumValuesOneIsPopulationFalse_ThrowException() {
         // Arrange
         double squareOfDifferences = 0;
         int numValues = 1;
@@ -535,7 +535,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeLinearRegressionFormula receives valid values - returns liner regression formula in the form y = mx + b")
-    void Calculator_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveValidValues_ReturnsLinearRegressionFormula() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -589,7 +589,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computeLinearRegressionFormula receives one pair of values - - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveOnePairOfValues_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveOnePairOfValues_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -608,7 +608,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives empty values - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveEmptyValues_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveEmptyValues_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -626,7 +626,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives Null values - - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveNullValues_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveNullValues_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -643,7 +643,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives non-numeric values - - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveNonNumValues_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveNonNumValues_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -661,7 +661,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives the same X values - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveSameXValues_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveSameXValues_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -681,7 +681,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives the same X values - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveAllXYValuesZero_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveAllXYValuesZero_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -701,7 +701,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives receives the same Y values - returns liner regression formula y = 0x + y")
-    void Calculator_computeLinearRegressionFormula_ReceiveSameYValues_ReturnsLinearRegressionFormula() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveSameYValues_ReturnsLinearRegressionFormula() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -732,7 +732,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives three values in line - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveThreeValuesInLine_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveThreeValuesInLine_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -751,7 +751,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computeLinearRegressionFormula receives non-numeric value - Throw Exception")
-    void Calculator_computeLinearRegressionFormula_ReceiveNonNumericValue_ThrowException() {
+    void LinearRegression_computeLinearRegressionFormula_ReceiveNonNumericValue_ThrowException() {
         //preq-UNIT-TEST-6
 
         // Arrange
@@ -771,7 +771,7 @@ class LogicUnitTests {
 
     @Test
     @DisplayName("computePredictedY receives non-numeric value - Throw Exception")
-    void Calculator_computePredictedY_ReceiveNonNumericValue_ThrowException() {
+    void LinearRegression_computePredictedY_ReceiveNonNumericValue_ThrowException() {
         //preq-UNIT-TEST-7
 
         // Arrange
@@ -789,7 +789,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computePredictedY receives two lines of values - Throw Exception")
-    void Calculator_computePredictedY_ReceiveTwoLinesOfValues_ThrowException() {
+    void LinearRegression_computePredictedY_ReceiveTwoLinesOfValues_ThrowException() {
         //preq-UNIT-TEST-7
 
         // Arrange
@@ -808,7 +808,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computePredictedY receives two values - Throw Exception")
-    void Calculator_computePredictedY_ReceivesTwoValues_ThrowException() {
+    void LinearRegression_computePredictedY_ReceivesTwoValues_ThrowException() {
         //preq-UNIT-TEST-7
 
         // Arrange
@@ -826,7 +826,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computePredictedY receives four values - Throw Exception")
-    void Calculator_computePredictedY_ReceivesFourValues_ThrowException() {
+    void LinearRegression_computePredictedY_ReceivesFourValues_ThrowException() {
         //preq-UNIT-TEST-7
 
         // Arrange
@@ -843,7 +843,7 @@ class LogicUnitTests {
     }
     @Test
     @DisplayName("computePredictedY receives valid values - returns predicted Y values")
-    void Calculator_computePredictedY_ReceiveValidValues_ReturnsPredictedY() {
+    void LinearRegression_computePredictedY_ReceiveValidValues_ReturnsPredictedY() {
         //preq-UNIT-TEST-7
 
         // Arrange
