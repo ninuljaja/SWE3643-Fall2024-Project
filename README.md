@@ -256,7 +256,7 @@ http://localhost:8080
 
 ![alt text](image-6.png)
 
-**Running Tests** 
+## Executing Unit Tests
 1. Open a new command line and navigate to the root directory of a repository
 
 
@@ -264,9 +264,17 @@ http://localhost:8080
 ```bash
 mvn test 
 ```
----
-
-## Executing Unit Tests
 ## Reviewing Unit Test Coverage
+![alt text](image-7.png)
+
+It run all 47 test
+
+![alt text](image-9.png)
+
+100% coverage was achieved
 ## Executing End-To-End Tests
+Since the playwright test use maven plugin, the End to end test is exectuted with the command mvn test along with Unit Test.
+
+## Reviewing End-To-End Test
+![alt text](image-8.png)
 ## Final Video Presentation
